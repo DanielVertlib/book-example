@@ -10,6 +10,7 @@ const DeleteButton = ({ bookId } : { bookId : String }) => {
 
   return (
     <FontAwesomeIcon
+      className='delete-button'
       onClick={(e) => {
         e.stopPropagation()
         dispatch(BookActions.deleteBook(bookId))

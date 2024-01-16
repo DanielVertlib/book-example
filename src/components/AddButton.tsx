@@ -1,5 +1,5 @@
 const AddButton = ({ onClick } : { onClick : React.MouseEventHandler<HTMLElement> }) => (
-  <button onClick={onClick}>
+  <button className='add-button' onClick={onClick}>
     Add Book
   </button>
 )

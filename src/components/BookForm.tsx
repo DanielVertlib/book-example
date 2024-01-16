@@ -64,7 +64,7 @@ const BookForm = ({ setShowAdd, setEditValue, value } : BookFormProps) => {
           Description:
           <input type="text" defaultValue={value?.description} name="description" />
         </label>
-        <input type="submit" value="Submit" />
+        <input className="submit-button" type="submit" value="Submit" />
       </form>
     </div>
   )

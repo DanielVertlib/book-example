@@ -13,21 +13,25 @@ interface BookListProps {
 const BookList = ({ books, setEditValue } : BookListProps) => {
   return (
     <div>
-      <table>
-        <tr>
-          <th>Book Name</th>
-          <th>Price</th>
-          <th>Category</th>
-          <th>Delete</th>
-        </tr>
+      <table className="booklist-table">
+        <thead>
+          <tr>
+            <th>Book Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
         {books.map((el) => {
           return(
-            <tr onClick={() => setEditValue(el)} key={el.id}>
-              <td>{el.name}</td>
-              <td>{el.price}</td>
-              <td>{el.category}</td>
-              <td><DeleteButton bookId={el.id}/></td>
-            </tr>
+            <tbody key={el.id}>
+              <tr onClick={() => setEditValue(el)}>
+                <td>{el.name}</td>
+                <td>{el.price}</td>
+                <td>{el.category}</td>
+                <td><DeleteButton bookId={el.id}/></td>
+              </tr>
+            </tbody>
           )
         })}
       </table>

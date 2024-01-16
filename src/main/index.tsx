@@ -1,5 +1,5 @@
 // Import React
-import { useState } from 'react'
+import { SetStateAction, useState } from 'react'
 
 // Import redux hooks
 import { useAppSelector } from 'hooks'
@@ -20,17 +20,18 @@ const App = () => {
 
   return (
     <div className="main-page">
-      Book List Blazesoft
-      <span className="fa-solid fa-user"></span>
-      <AddButton onClick={() => setShowAdd(true)} />
+      <div className="main-page__header">
+        Book List Blazesoft
+        <AddButton onClick={() => setShowAdd(true)} />
+      </div>
       <BookList
         books={book.items}
-        setEditValue={(value: BookProps | null) => setEditValue(value ? value.toString() : null)} />
+        setEditValue={(value : SetStateAction<string | null>) => setEditValue(value)} />
       {showAdd || editValue ?
         <BookForm
           setShowAdd={() => setShowAdd(false)}
           value={editValue as BookProps | null}
-          setEditValue={(value: any) => setEditValue(value as string | null)} /> :
+          setEditValue={(value : SetStateAction<string | null>) => setEditValue(value)} /> :
           null
       }
     </div>

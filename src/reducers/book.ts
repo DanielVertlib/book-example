@@ -41,10 +41,6 @@ export default function application(state = initialState, action : any) {
 
     case 'EDIT_BOOK':
       const { updatedBook } = action
-      state.items.map((item) => {
-        console.log(item.id, updatedBook.id)
-        return (item.id === updatedBook.id ? { ...item, ...updatedBook } : item)
-      })
       return {
         ...state,
         items: state.items.map((item) => (item.id === updatedBook.id ? { ...item, ...updatedBook } : item))
