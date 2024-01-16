@@ -17,7 +17,6 @@ export function deleteBook(bookId) {
 }
 
 export function editBook(updatedBook) {
-  console.log('edit book', updatedBook)
   return (dispatch) => {
     dispatch({
       type: 'EDIT_BOOK',

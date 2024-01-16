@@ -1,9 +1,13 @@
+// Import React
 import { useState } from 'react'
 
+// Import redux hooks
 import { useAppSelector } from 'hooks'
 
+// Import Components
 import { AddButton, BookForm, BookList } from 'components'
 
+// Import types
 import { BookProps } from 'types/book'
 
 // Import SCSS
@@ -11,10 +15,9 @@ import './index.scss'
 
 const App = () => {
   const [showAdd, setShowAdd] = useState(false)
-
   const [editValue, setEditValue] = useState<string | null>(null)
   const book = useAppSelector(state => state.book)
-  console.log(editValue)
+
   return (
     <div className="main-page">
       Book List Blazesoft

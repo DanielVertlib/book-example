@@ -1,3 +1,4 @@
+// Type definitions for Book
 export interface BookProps {
   id: string,
   name: string,

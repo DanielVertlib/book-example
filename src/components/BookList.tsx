@@ -1,6 +1,10 @@
+// Import components
 import { DeleteButton } from 'components'
+
+// Import types
 import { BookProps } from 'types/book'
 
+// Typing for BookList props
 interface BookListProps {
   books : Array<BookProps>,
   setEditValue : Function
@@ -16,7 +20,7 @@ const BookList = ({ books, setEditValue } : BookListProps) => {
           <th>Category</th>
           <th>Delete</th>
         </tr>
-        {books.map((el : any) => {
+        {books.map((el) => {
           return(
             <tr onClick={() => setEditValue(el)} key={el.id}>
               <td>{el.name}</td>
